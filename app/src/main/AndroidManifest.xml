@@ -6,15 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
-    <!-- VPN Specific Permissions -->
-    <uses-permission android:name="android.permission.BIND_VPN_SERVICE"/>
-    <uses-permission android:name="android.permission.CONTROL_ALWAYS_ON_VPN"/>
-
     <!-- Android 8.0+ Foreground Service Requirements -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_NETWORK"/>
-
     <!-- Android 10+ Restrictions -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
 
@@ -27,16 +21,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FreeVpn">
-
-        <!-- VPN Service -->
-        <service
-            android:name=".VpnService"
-            android:permission="android.permission.BIND_VPN_SERVICE"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.net.VpnService"/>
-            </intent-filter>
-        </service>
 
         <!-- Splash Activity (now the launcher) -->
         <activity
